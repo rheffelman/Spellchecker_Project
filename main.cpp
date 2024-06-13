@@ -21,7 +21,7 @@ int main()
         if (word == "!exit") break;
         if (!d.search(word))
         {
-            printf("\"%s\" was detected as a mispelled word. Here are some suggestions:\n", word.c_str());
+            printf("\n\"%s\" was detected as a mispelled word. Here are some suggestions:\n", word.c_str());
             vector<string>suggestions;
             d.getSuggestion(word, suggestions);
             printf("%d\n", suggestions.size());
@@ -30,7 +30,6 @@ int main()
                 printf("%s", suggestion.c_str());
                 printf(" (LD: %d JCS: %.3f)\n", d.levenshteinDistance(word, suggestion), d.jaccardSimilarity(word, suggestion));
             }
-            printf("\n");
         }
     }
 }
